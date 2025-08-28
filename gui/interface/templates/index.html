@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intelligent Mobility System</title>
+    {% load static %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="{% static 'styles.css' %}" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><span style="color: red;">IMS</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-outline-success active" aria-current="page" href="{% url 'index' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-outline-success" href="{% url 'about' %}">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-outline-success" href="{% url 'contact' %}">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <header class="hero-section text-center text-white">
+        <div class="container">
+            <h1 class="display-4">Intelligent Mobility System (IMS)</h1>
+            <p class="lead">Revolutionizing autonomous navigation with cutting-edge AI.</p>
+            <a href="{% url 'about' %}" class="btn btn-primary btn-lg">Learn More</a>
+        </div>
+    </header>
+
+    <!-- Features Section -->
+    <section class="features-section py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Key Features</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="feature-card text-center p-4">
+                        <i class="fas fa-robot fa-3x mb-3"></i>
+                        <h4>Autonomous Navigation</h4>
+                        <p>Real-time decision-making and dynamic obstacle avoidance.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card text-center p-4">
+                        <i class="fas fa-brain fa-3x mb-3"></i>
+                        <h4>Reinforcement Learning</h4>
+                        <p>Powered by DDQN and NEAT algorithms for adaptive learning.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card text-center p-4">
+                        <i class="fas fa-cogs fa-3x mb-3"></i>
+                        <h4>High-Fidelity Simulation</h4>
+                        <p>Rigorously tested in realistic simulated environments.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Simulation Section -->
+    <section class="simulation-section py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Explore Our Simulations</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card simulation-card">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">DDQN Model Simulation</h5>
+                            <p class="card-text">Explore the environment with our Deep Q-Network agent.</p>
+                            <a href="{% url 'run_ddqn' %}" class="btn btn-success">Run Simulation</a>
+                            <a href="#" class="btn btn-info">Watch Video</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card simulation-card">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">NEAT Model Simulation</h5>
+                            <p class="card-text">See Neuroevolution of Augmenting Topologies in action.</p>
+                            <a href="{% url 'run_neat' %}" class="btn btn-success">Run Simulation</a>
+                            <a href="#" class="btn btn-info">Watch Video</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer bg-dark text-light" style="padding: 5px 0; font-size: 0.95rem; min-height: 0;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>About Us</h5>
+                    <p style="text-align: justify;">
+                        The Intelligent Mobility System (IMS) is a cutting-edge project focused on advancing autonomous vehicle technology and smart transportation solutions.
+                        Our mission is to develop intelligent, safe, and efficient mobility systems using state-of-the-art AI models such as DDQN and NEAT.
+                    </p>
+                </div>
+                <div class="col-md-3">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="{% url 'index' %}">Home</a></li>
+                        <li><a href="{% url 'about' %}">About</a></li>
+                        <li><a href="{% url 'about' %}">Services</a></li>
+                        <li><a href="{% url 'contact' %}">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Contact Us</h5>
+                    <ul class="list-unstyled">
+                        <li>Email: nomi@gmail.com</li>
+                        <li>Phone: +923-143834872</li>
+                        <li>Address: Rwp,Pakistan</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-12 text-center">
+                    <p>&copy; 2022–2023 IMS,All rights reserved, Inc. · <a href="#">Privacy</a> · <a
+                            href="#">Terms</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var navbar = document.querySelector('.navbar');
+            if (navbar) {
+                var navbarHeight = navbar.offsetHeight;
+                document.body.style.paddingTop = navbarHeight + 'px';
+            }
+        });
+        window.addEventListener("resize", function() {
+            var navbar = document.querySelector('.navbar');
+            if (navbar) {
+                var navbarHeight = navbar.offsetHeight;
+                document.body.style.paddingTop = navbarHeight + 'px';
+            }
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

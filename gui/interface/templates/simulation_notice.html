@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulation Notice - Intelligent Mobility System</title>
+    {% load static %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{% static 'styles.css' %}" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><span style="color: red;">IMS</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-outline-success" aria-current="page" href="{% url 'index' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-outline-success" href="{% url 'about' %}">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-outline-success" href="{% url 'contact' %}">Contact</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container mt-5 pt-5">
+        <div class="alert alert-warning" role="alert">
+            <h4 class="alert-heading">Simulation Notice</h4>
+            <p>Thank you for your interest in our simulation!</p>
+            <hr>
+            <p class="mb-0">
+                Please note that this simulation is computationally intensive and requires a graphical interface (like Pygame) to run. It cannot be executed on the web server.
+            </p>
+            <p class="mb-0">
+                To experience the simulation, please download the project from the GitHub repository and run it on your local machine.
+            </p>
+            <a href="{% url 'index' %}" class="btn btn-primary mt-3">Back to Home</a>
+        </div>
+    </div>
+    
+    <footer class="footer bg-dark text-light py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>About Us</h5>
+                   <p style="text-align: justify;">
+                        The Intelligent Mobility System (IMS) is a cutting-edge project focused on advancing autonomous vehicle technology and smart transportation solutions.
+                        Our mission is to develop intelligent, safe, and efficient mobility systems using state-of-the-art AI models such as DDQN and NEAT.
+                    </p>
+                </div>
+                <div class="col-md-3">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="{% url 'index' %}">Home</a></li>
+                        <li><a href="{% url 'about' %}">About</a></li>
+                        <li><a href="{% url 'about' %}">Services</a></li>
+                        <li><a href="{% url 'contact' %}">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Contact Us</h5>
+                    <ul class="list-unstyled">
+                        <li>Email: nomi@gmail.com</li>
+                        <li>Phone: 123-456-7890</li>
+                        <li>Address: 123 country, xyz</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-12 text-center">
+                    <p>&copy; 2022–2023 IMS,All rights reserved, Inc. · <a href="#">Privacy</a> · <a
+                            href="#">Terms</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
