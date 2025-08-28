@@ -1,8 +1,4 @@
 django
 python-decouple
-pygame
-tensorflow
-numpy
-neat-python
 whitenoise
 gunicorn

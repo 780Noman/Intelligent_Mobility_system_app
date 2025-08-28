@@ -13,11 +13,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy the rest of the application's code into the container
 COPY gui/ .
 
-# Collect static files
-RUN python manage.py collectstatic --no-input
-
 # Expose the port the app runs on
 EXPOSE 8000
 
 # Run the application
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "gui.wsgi"]
+CMD ["sh", "-c", "python manage.py collectstatic --no-input && gunicorn --bind 0.0.0.0:8000 gui.wsgi"]
