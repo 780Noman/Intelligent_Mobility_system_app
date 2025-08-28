@@ -17,4 +17,4 @@ COPY gui/ .
 EXPOSE 8000
 
 # Run the application
-CMD ["sh", "-c", "python manage.py collectstatic --no-input && gunicorn --bind 0.0.0.0:8000 gui.wsgi"]
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "gui.wsgi"]

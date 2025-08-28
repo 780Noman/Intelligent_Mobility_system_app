@@ -121,4 +121,4 @@ STATICFILES_DIRS = [BASE_DIR / 'static']  # Ensure Django knows where to find st
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+
