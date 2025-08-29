@@ -8,3 +8,6 @@ __pycache__
 .env
 db.sqlite3
 venv/
+FYP/
+fyp1/
+gui/interface/simulations/
