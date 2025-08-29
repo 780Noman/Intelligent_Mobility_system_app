@@ -21,7 +21,7 @@ RUN pip install --no-cache-dir --upgrade -r requirements.txt
 COPY --chown=user gui/ .
 
 # Run collectstatic to gather all static files
-RUN SECRET_KEY="dummy-key-for-collectstatic" python manage.py collectstatic --no-input
+RUN SECRET_KEY="dummy" STATIC_ROOT="/home/user/app/staticfiles" python manage.py collectstatic --no-input
 
 # Expose the port the app runs on
 EXPOSE 8000
