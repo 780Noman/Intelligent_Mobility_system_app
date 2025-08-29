@@ -1,4 +1,6 @@
-django
-python-decouple
+Django==5.2.5
+python-decouple==3.8
 whitenoise
 gunicorn
+asgiref==3.9.1
+sqlparse==0.5.3
