@@ -114,7 +114,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = '/static/'  # Change to include a leading slash
-STATICFILES_DIRS = [BASE_DIR / 'static']  # Ensure Django knows where to find static files
+STATICFILES_DIRS = [BASE_DIR / "interface" / "static"]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field

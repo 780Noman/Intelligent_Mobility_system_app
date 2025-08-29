@@ -1,20 +1,30 @@
-# Use an official Python runtime as a parent image
-FROM python:3.12
+# Use a slim Python runtime as a parent image
+FROM python:3.12-slim
 
-# Set the working directory in the container
-WORKDIR /app
+# Set environment variables for Python for production
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
 
-# Copy the requirements file into the container
-COPY gui/requirements.txt .
+# Create and switch to a non-root user for security
+RUN useradd -m -u 1000 user
+USER user
 
-# Install any needed packages specified in requirements.txt
-RUN pip install --no-cache-dir -r requirements.txt
+# Set the working directory
+WORKDIR /home/user/app
+ENV PATH="/home/user/.local/bin:${PATH}"
 
-# Copy the rest of the application's code into the container
-COPY gui/ .
+# Copy and install dependencies
+COPY --chown=user gui/requirements.txt .
+RUN pip install --no-cache-dir --upgrade -r requirements.txt
+
+# Copy the application code
+COPY --chown=user gui/ .
+
+# Run collectstatic to gather all static files
+RUN python manage.py collectstatic --no-input
 
 # Expose the port the app runs on
 EXPOSE 8000
 
-# Run the application
+# Start the Gunicorn server
 CMD ["gunicorn", "--bind", "0.0.0.0:8000", "gui.wsgi"]
